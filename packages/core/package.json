@@ -1,0 +1,39 @@
+{
+	"name": "ntnu-course-list",
+	"description": "Developer Friendly Course List of National Taiwan Normal University.",
+	"version": "0.0.0",
+	"author": "JacobLinCool <jacoblincool@gmail.com> (https://jacoblin.cool)",
+	"license": "MIT",
+	"keywords": [
+		"NTNU"
+	],
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsup",
+		"build:docs": "typedoc --out docs src"
+	},
+	"dependencies": {
+		"cross-fetch": "^4.0.0",
+		"debug": "^4.3.4",
+		"xlsx": "^0.18.5"
+	},
+	"devDependencies": {
+		"@types/debug": "^4.1.8",
+		"@types/node": "^20.5.7",
+		"tsup": "^7.2.0",
+		"typedoc": "^0.25.0",
+		"typescript": "^5.2.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/JacobLinCool/ntnu-course-list.git"
+	},
+	"bugs": {
+		"url": "https://github.com/JacobLinCool/ntnu-course-list/issues"
+	},
+	"homepage": "https://jacoblincool.github.io/ntnu-course-list"
+}
