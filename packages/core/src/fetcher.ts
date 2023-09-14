@@ -19,17 +19,19 @@ export class CourseListFetcher {
 	 * Get course list in xls format.
 	 */
 	public async xls(opt: CourseListFetcherOptions): Promise<ArrayBuffer> {
-		const body = `rpt=cofopdl&acadmYear=${opt.year}&acadmTerm=${opt.term}&deptCode1=${
-			opt.deptCode1 ?? ""
-		}&zuDeptCode1=${opt.zuDeptCode1 ?? ""}&kind=${opt.kind ?? ""}&generalCore=${
-			opt.generalCore ?? ""
-		}&chn=&teacher=${opt.teacher ?? ""}&engTeach=${opt.engTeach ?? "N"}&moocs_v=${
-			opt.moocs_v ?? "N"
-		}&remoteCourse=${opt.remoteCourse ?? "N"}&digital=${opt.digital ?? "N"}&adsl=${
-			opt.adsl ?? "N"
-		}&classCode=${opt.classCode ?? ""}&language1=${opt.language1 ?? "chinese"}&serial_number=${
-			opt.serial_number ?? ""
-		}&course_code=${opt.course_code ?? ""}&download=${opt.download ?? "xls"}`;
+		const body = `_dc=${Date.now()}&rpt=cofopdl&acadmYear=${opt.year}&acadmTerm=${
+			opt.term
+		}&deptCode1=${opt.deptCode1 ?? ""}&zuDeptCode1=${opt.zuDeptCode1 ?? ""}&kind=${
+			opt.kind ?? ""
+		}&generalCore=${opt.generalCore ?? ""}&chn=&teacher=${opt.teacher ?? ""}&engTeach=${
+			opt.engTeach ?? "N"
+		}&moocs_v=${opt.moocs_v ?? "N"}&remoteCourse=${opt.remoteCourse ?? "N"}&digital=${
+			opt.digital ?? "N"
+		}&adsl=${opt.adsl ?? "N"}&classCode=${opt.classCode ?? ""}&language1=${
+			opt.language1 ?? "chinese"
+		}&serial_number=${opt.serial_number ?? ""}&course_code=${opt.course_code ?? ""}&download=${
+			opt.download ?? "xls"
+		}`;
 		this.log("Fetching course list with body: %s", body);
 
 		const res = await fetch(this.endpoint, {
