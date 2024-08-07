@@ -15,10 +15,10 @@
 		"publish": "tsx src/publish.ts"
 	},
 	"devDependencies": {
-		"@types/node": "^20.5.7",
+		"@types/node": "^22.1.0",
 		"ntnu-course-list": "workspace:^",
-		"tsx": "^3.12.7",
-		"typescript": "^5.2.2"
+		"tsx": "^4.16.5",
+		"typescript": "^5.5.4"
 	},
 	"repository": {
 		"type": "git",
