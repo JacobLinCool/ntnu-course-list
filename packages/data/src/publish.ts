@@ -18,8 +18,20 @@ async function main() {
 			throw new Error(`File ${path.join(dir, "package.json")} does not exist`);
 		}
 		const pkg = JSON.parse(fs.readFileSync(path.join(dir, "package.json"), "utf-8"));
+		if (!pkg.name || !pkg.version) {
+			throw new Error(`Invalid package.json in ${dir}`);
+		}
+		if (await published(pkg.version)) {
+			console.log(`Skipping ${pkg.name}@${pkg.version}, already published`);
+			continue;
+		}
 		console.log(`Publishing ${pkg.name}@${pkg.version}...`);
 
 		execSync("npm publish", { cwd: dir, stdio: "inherit" });
 	}
+}
+
+async function published(version: string) {
+	const res = await fetch(`https://registry.npmjs.org/ntnu-course-list-data/${version}`);
+	return res.status !== 404;
 }

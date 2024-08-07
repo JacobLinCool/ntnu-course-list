@@ -29,6 +29,26 @@ export const targets: CourseListFetcherOptions[] = [
 		year: 112,
 		term: 1,
 	},
+	{
+		year: 112,
+		term: 2,
+	},
+	{
+		year: 112,
+		term: 3,
+	},
+	{
+		year: 113,
+		term: 1,
+	},
+	{
+		year: 113,
+		term: 2,
+	},
+	{
+		year: 113,
+		term: 3,
+	},
 ];
 
 export function filter() {
